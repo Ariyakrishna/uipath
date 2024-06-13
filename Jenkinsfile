@@ -1,16 +1,15 @@
 pipeline {
     agent any
-	
-	        environment {
-	        MAJOR = '1'
-	        MINOR = '0'
-	        //Orchestrator Services
-	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
-	        UIPATH_ORCH_LOGICAL_NAME = "Aarya. S S"
-	        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
-	        UIPATH_ORCH_FOLDER_NAME = "TestingDevops"
-	    }
 
+    environment {
+        MAJOR = '1'
+        MINOR = '0'
+        // Orchestrator Services
+        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
+        UIPATH_ORCH_LOGICAL_NAME = "Aarya. S S"
+        UIPATH_ORCH_TENANT_NAME = "DefaultTenant"
+        UIPATH_ORCH_FOLDER_NAME = "TestingDevops"
+    }
 
     stages {
         // Printing Basic Information
@@ -32,7 +31,7 @@ pipeline {
                 UiPathPack (
                     outputPath: "Output\\${env.BUILD_NUMBER}",
                     projectJsonPath: "project.json",
-                    version: [$class: 'ManualVersionEntry', version: "1.0.${env.BUILD_NUMBER}"],
+                    version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
                     useOrchestrator: false,
                     traceLevel: 'None'
                 )
@@ -52,14 +51,14 @@ pipeline {
                 echo "Deploying ${BRANCH_NAME} to UAT"
                 UiPathDeploy (
                     packagePath: "Output\\${env.BUILD_NUMBER}",
-                    orchestratorAddress: "https://cloud.uipath.com/",
-                    orchestratorTenant: "DefaultTenant",
-                    folderName: "TestingDevops",
+                    orchestratorAddress: "${UIPATH_ORCH_URL}",
+                    orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}",
+                    folderName: "${UIPATH_ORCH_FOLDER_NAME}",
                     environments: 'environments',
-                    //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-                    credentials: Token(accountName: ${UIPATH_ORCH_LOGICAL_NAME}, credentialsId: 'UipathAPIaarya'),
+                    credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: 'UipathAPIaarya'),
                     traceLevel: 'None',
-                    entryPointPaths: 'Main.xaml'
+                    entryPointPaths: 'Main.xaml',
+                    createProcess: true // Added missing parameter
                 )
             }
         }
@@ -87,7 +86,7 @@ pipeline {
             echo "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JOB_DISPLAY_URL})"
         }
         always {
-            /* Clean workspace if success */
+            // Clean workspace if success
             cleanWs()
         }
     }
