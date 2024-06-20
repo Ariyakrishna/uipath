@@ -1,0 +1,18 @@
+{
+    "relationPropertiesPanelTitle": "リレーションプロパティ",
+    "AddToTitle": "追加先",
+    "addButtonTitle": "追加",
+    "addLabel": "追加先",
+    "newShowAddObjectPresenterBtn": "新規",
+    "paletteShowAddObjectPresenterBtn": "パレット",
+    "searchShowAddObjectPresenterBtn": "検索",
+    "errorInGettingSubtypesofEndItem": "内部エラーのために、検索結果はフィルタされませんでした。",
+    "FrequentlyUsedSectionTitle": "頻繁に使用",
+    "addPropertiesLabel": "プロパティを追加",
+    "resultsTabTitle": "結果",
+    "filterTabTitle": "フィルタ",
+    "Mtw0ShowAddObjectDesc": "物質を材質に割当てます。",
+    "view": "表示",
+    "billOfMaterials": "BOMを表示",
+    "billOfSubstances" : "物質表を表示"
+}

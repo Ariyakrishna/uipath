@@ -1,0 +1,18 @@
+{
+    "relationPropertiesPanelTitle": "Propriedades de relação",
+    "AddToTitle": "Adicionar a",
+    "addButtonTitle": "Adicionar",
+    "addLabel": "Adicionar a",
+    "newShowAddObjectPresenterBtn": "Novo",
+    "paletteShowAddObjectPresenterBtn": "Paleta",
+    "searchShowAddObjectPresenterBtn": "Pesquisar",
+    "errorInGettingSubtypesofEndItem": "Os resultados da pesquisa não foram filtrados em razão de um erro interno.",
+    "FrequentlyUsedSectionTitle": "Usados com frequência",
+    "addPropertiesLabel": "Adicionar propriedades",
+    "resultsTabTitle": "Resultados",
+    "filterTabTitle": "Filtro",
+    "Mtw0ShowAddObjectDesc": "Atribua uma substância ao material.",
+    "view": "Exibir",
+    "billOfMaterials": "Exibir Lista de Materiais",
+    "billOfSubstances" : "Exibir Lista de Substâncias"
+}

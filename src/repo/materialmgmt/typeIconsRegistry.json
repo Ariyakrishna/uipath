@@ -1,0 +1,36 @@
+[
+  {
+    "type": {
+      "names": [
+        "Mtw0MaterialSubstanceInfo"
+      ],
+      "prop": {
+        "names": [
+          "mtw0Material"
+        ],
+        "type": {
+          "names": [
+            "Mat1MaterialRevision"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "type": {
+      "names": [
+        "Mtw0MaterialSubstanceInfo"
+      ],
+      "prop": {
+        "names": [
+          "mtw0Substance"
+        ],
+        "type": {
+          "names": [
+            "Mat1Substance"
+          ]
+        }
+      }
+    }
+  }
+]

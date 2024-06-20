@@ -1,0 +1,22 @@
+{
+  "typeProperties": {
+    "Mtw0MaterialSubstanceInfo": {
+      "displayProperty": "object_string",
+      "additionalProperties": [
+        {
+          "name": "mtw0Material"
+        },
+        {
+          "name": "mtw0Substance"
+        }
+      ]
+    },
+    "ItemRevision": {
+      "additionalProperties": [
+        {
+          "name": "VMRepresents"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+    "commands": {
+        "Demo": {
+            "iconId": "cmdZoomToWeek",
+            "title": "{{i18n.DemoTitle}}",
+            "description": "{{i18n.DemoDescription}}"
+        },
+        "DEMO": {
+            "iconId": "cmdZoomToSelected",
+            "title": "{{i18n.DEMOTitle}}",
+            "description": "{{i18n.DEMODescription}}"
+        },
+        "AWC": {
+            "iconId": "cmdZoomToWeek",
+            "title": "{{i18n.AWCTitle}}",
+            "description": "{{i18n.AWCDescription}}"
+        },
+        "AWC_DEMO": {
+            "iconId": "cmdZoomToQuarterly",
+            "title": "{{i18n.AWC_DEMOTitle}}",
+            "description": "{{i18n.AWC_DEMODescription}}"
+        },
+        "AWC_SAMPLE": {
+            "iconId": "cmdUpdateDIPA",
+            "title": "{{i18n.AWC_SAMPLETitle}}",
+            "description": "{{i18n.AWC_SAMPLEDescription}}"
+        },
+        "ActiveWSpace": {
+            "iconId": "cmdWeldMarkup",
+            "title": "{{i18n.ActiveWSpaceTitle}}",
+            "description": "{{i18n.ActiveWSpaceDescription}}"
+        },
+        "awc": {
+            "iconId": "cmdTravelerReport",
+            "title": "{{i18n.awcTitle}}",
+            "description": "{{i18n.awcDescription}}"
+        }
+    },
+    "commandHandlers": {
+        "DemoHandler": {
+            "id": "Demo",
+            "action": "activateDemo",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "DEMOHandler": {
+            "id": "DEMO",
+            "action": "activateDEMO",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "AWCHandler": {
+            "id": "AWC",
+            "action": "activateAWC",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "AWC_DEMOHandler": {
+            "id": "AWC_DEMO",
+            "action": "activateAWC_DEMO",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "AWC_SAMPLEHandler": {
+            "id": "AWC_SAMPLE",
+            "action": "activateAWC_SAMPLE",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "ActiveWSpaceHandler": {
+            "id": "ActiveWSpace",
+            "action": "activateActiveWSpace",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        },
+        "awcHandler": {
+            "id": "awc",
+            "action": "activateawc",
+            "activeWhen": true,
+            "visibleWhen": {
+                "condition": "conditions.true"
+            }
+        }
+    },
+    "commandPlacements": {
+        "Demoaw_toolsAndInfo": {
+            "id": "Demo",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        },
+        "DEMOaw_toolsAndInfo": {
+            "id": "DEMO",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        },
+        "AWCaw_toolsAndInfo": {
+            "id": "AWC",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        },
+        "AWC_DEMOaw_toolsAndInfo": {
+            "id": "AWC_DEMO",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        },
+        "AWC_SAMPLEaw_toolsAndInfo": {
+            "id": "AWC_SAMPLE",
+            "uiAnchor": "aw_toolsAndInfo",
+            "priority": 100
+        },
+        "ActiveWSpaceaw_toolsAndInfo": {
+            "id": "ActiveWSpace",
+            "uiAnchor": "aw_globalToolbar",
+            "priority": 100
+        },
+        "awcaw_toolsAndInfo": {
+            "id": "awc",
+            "uiAnchor": "aw_rightWall",
+            "priority": 100
+        }
+    },
+    "actions": {
+        "activateDemo": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "Demo",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateDEMO": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "DEMO",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateAWC": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "AWC",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateAWC_DEMO": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "AWC_DEMO",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateAWC_SAMPLE": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "AWC_SAMPLE",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateActiveWSpace": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "ActiveWSpace",
+                "location": "aw_toolsAndInfo"
+            }
+        },
+        "activateawc": {
+            "actionType": "JSFunction",
+            "method": "activateCommandPanel",
+            "deps": "js/commandPanel.service",
+            "inputData": {
+                "commandId": "awc",
+                "location": "aw_toolsAndInfo"
+            }
+        }
+    },
+    "conditions": {
+        "objectIsSelected": {
+            "expression": "ctx.selected"
+        }
+    },
+    "i18n": {
+        "DemoTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "DemoDescription": [
+            "mysamplemoduleMessages"
+        ],
+        "DEMOTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "DEMODescription": [
+            "mysamplemoduleMessages"
+        ],
+        "AWCTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "AWCDescription": [
+            "mysamplemoduleMessages"
+        ],
+        "AWC_DEMOTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "AWC_DEMODescription": [
+            "mysamplemoduleMessages"
+        ],
+        "AWC_SAMPLETitle": [
+            "mysamplemoduleMessages"
+        ],
+        "AWC_SAMPLEDescription": [
+            "mysamplemoduleMessages"
+        ],
+        "ActiveWSpaceTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "ActiveWSpaceDescription": [
+            "mysamplemoduleMessages"
+        ],
+        "awcTitle": [
+            "mysamplemoduleMessages"
+        ],
+        "awcDescription": [
+            "mysamplemoduleMessages"
+        ]
+    }
+}

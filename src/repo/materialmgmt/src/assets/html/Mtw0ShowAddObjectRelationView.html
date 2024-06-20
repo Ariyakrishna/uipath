@@ -1,0 +1,20 @@
+<aw-command-panel caption="test" context="subPanelContext">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView==='Mtw0ShowAddObjectRelation'">
+        <aw-form name="addObjectWithRelationForm">
+                <aw-add
+                    target-object="{{ctx.relation}}"
+                    include-types="{{ctx.relation}}"
+                    load-sub-types="false"
+                    auto-select-on-unique-type="true"
+                    visible-tabs="new"
+                    add-panel-state="fields.addPanelState"
+                    sub-panel-context="{ ...subPanelContext, triggerCreate: data.triggerCreate }"
+                    active-state="data.activeState"
+                    xrt-state="data.xrtState"
+                    edit-handler="editHandlers.addPanelEditHandler"></aw-add>
+         </aw-form>
+         <aw-panel-footer>
+               <aw-button action="initiateRelateOperation"> <aw-i18n>i18n.addButtonTitle</aw-i18n> </aw-button>
+         </aw-panel-footer>
+    </div>
+</aw-command-panel>

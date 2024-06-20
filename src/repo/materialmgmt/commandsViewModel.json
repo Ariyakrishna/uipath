@@ -1,0 +1,80 @@
+{
+  "commands": {
+    "Mtw0ShowAddObject": {
+      "iconId": "cmdAdd",
+      "title": "{{i18n.AddToTitle}}",
+      "description": "{{i18n.Mtw0ShowAddObjectDesc}}"
+    }
+  },
+  "commandHandlers": {
+    "Mtw0ShowAddObjectCommandHandler": {
+      "id": "Mtw0ShowAddObject",
+      "action": "getSemiComponentProperties",
+      "activeWhen": true,
+      "visibleWhen": {
+        "condition": "conditions.addObjectCmdVisibility"
+      }
+    }
+  },
+  "commandPlacements": {},
+  "actions": {
+    "addEventChangeOperation": {
+      "actionType": "JSFunction",
+      "method": "activateShowAddObjectPanel",
+      "deps": "js/Mtw0ShowAddObjectService",
+      "inputData": {
+        "commandId": "Mtw0ShowAddObject",
+        "location": "aw_toolsAndInfo",
+        "data": "{{data}}",
+        "ctx": "{{ctx}}",
+        "objectSetSource ": "{{commandContext.objectSetSource}}"
+      }
+    },
+    "getSemiComponentProperties": {
+      "actionType": "TcSoaService",
+      "serviceName": "Core-2006-03-DataManagement",
+      "method": "getProperties",
+      "inputData": {
+        "objects": [
+          "{{function:getSelectedLines}}"
+        ],
+        "attributes": [
+          "sci0IsSemicomponent"
+        ]
+      },
+      "deps": "js/Mtw0ShowAddObjectService",
+      "events": {
+        "success": [
+          {
+            "name": "showPanel"
+          }
+        ]
+      }
+    }
+  },
+  "onEvent": [
+    {
+      "eventId": "showPanel",
+      "action": "addEventChangeOperation"
+    }
+  ],
+  "functions": {
+    "getSelectedLines": {
+      "functionName": "getSelectedLines",
+      "parameters": []
+    }
+  },
+  "conditions": {
+    "addObjectCmdVisibility": {
+      "expression": "ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Part' ) > -1  || ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'ItemRevision' ) > -1 || ctx.mselected[0].modelType.typeHierarchyArray.indexOf( 'Awb0ConditionalElement' ) > -1"
+    }
+  },
+  "i18n": {
+    "AddToTitle": [
+      "MaterialMgmtMessages"
+    ],
+    "Mtw0ShowAddObjectDesc": [
+      "MaterialMgmtMessages"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "header": "Header",
+    "body": "Body",
+    "footer": "Footer",
+    "checkBoxName": "Enable the OK button in footer",
+    "save": "Ok",
+    "textValue": "Contents here",
+    "DemoTitle": "Demo",
+    "DemoDescription": "DemoDescription",
+    "DEMOTitle": "DEMO",
+    "DEMODescription": "DEMODescription",
+    "AWCTitle": "AWC",
+    "AWCDescription": "AWCDescription",
+    "AWC_DEMOTitle": "AWC_DEMO",
+    "AWC_DEMODescription": "AWC_DEMODescription",
+    "AWC_SAMPLETitle": "AWC_SAMPLE",
+    "AWC_SAMPLEDescription": "AWC_SAMPLEDescription",
+    "ActiveWSpaceTitle": "ActiveWSpace",
+    "ActiveWSpaceDescription": "ActiveWSpaceDescription",
+    "awcTitle": "awc",
+    "awcDescription": "awcDescription"
+}

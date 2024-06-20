@@ -1,0 +1,20 @@
+{
+  "typeMaterial48": [
+    "Mat1Material"
+  ],
+  "typeMaterialRevision48": [
+    "Mat1MaterialRevision"
+  ],
+  "typeSubstance48": [
+    "Mat1Substance"
+  ],
+  "typeCompoundMaterial48": [
+    "Mat1CompMaterial"
+  ],
+  "typeCompoundMaterialRevision48": [
+    "Mat1CompMaterialRevision"
+  ],
+  "typeMatmlDataset48": [
+    "Mat1MatML"
+  ]
+}

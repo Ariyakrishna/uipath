@@ -1,0 +1,52 @@
+<aw-command-panel caption="i18n.addButtonTitle" context="subPanelContext">
+    <div class="aw-layout-flexColumn" show-when="data.activeState.value.activeView==='Mtw0ShowAddObject'">
+        <aw-panel-body visible-when="!data.addPanelState.sourceObjects">
+             <aw-flex-row>
+                 <aw-flex-column width="12">                
+                 <aw-scrollpanel>        
+                    <aw-add
+                        target-object="{{ctx.selected.type}}"
+                        relations="{{ctx.relation}}"
+                        include-types="{{ctx.secondaryObjForXrtCreate}}"
+                        load-sub-types="false"
+                        auto-select-on-unique-type="true"
+                        max-recent-count="3"
+                        type-filter="{{ctx.secondaryObjFromObjectSource}}"
+                        search-filter="{{ctx.searchFilter}}"
+                        search-state="fields.searchState"
+                        visible-tabs="search"
+                        add-panel-state="fields.addPanelState"
+                        sub-panel-context="{ supportsAdvancedSearch:false, showCheckBox: false,...subPanelContext }"
+                        active-state="data.activeState"
+                        xrt-state="data.xrtState"
+                        edit-handler="editHandlers.addPanelEditHandler"
+                        supports-advanced-search="subPanelContext.supportsAdvancedSearch">
+                    </aw-add>
+                </aw-scrollpanel>      
+                </aw-flex-column>
+            </aw-flex-row>
+        </aw-panel-body>    
+        
+        <!-- panel-footer button -->            
+        <aw-flex-row>
+            <aw-flex-column width="12">                
+                <aw-scrollpanel>        
+                    <aw-panel-footer visible-when="data.activeView!='AssignProjectSub' && data.activeView!='addReferenceSub'">    
+                        <aw-panel-section caption="i18n.relationPropertiesPanelTitle" visible-when="data.addPanelState.sourceObjects.length > 0">
+                        <!--aw-panel-section caption="Relation Properties" visible-when="data.addPanelState.sourceObjects.length > 0"-->
+                            <aw-form name="commandPanelForm">
+                                <aw-xrt type="CREATE" object-type="{{ctx.relation}}" xrt-state="data.xrtStateRelation" ></aw-xrt>
+                            </aw-form>
+                        </aw-panel-section>        
+                        <!-- panel-footer button for Palette and Search tab -->
+                        <aw-button size="auto" default="true" action="initiateRelateOperation"  visible-when="data.addPanelState.sourceObjects.length > 0" enable-when="formProp.attributes.valid && conditions.isPaletteSearchTabAddButtonVisible && data.addPanelState.sourceObjects[0]">
+                            <aw-i18n>i18n.addButtonTitle</aw-i18n>
+                        </aw-button>
+                    </aw-panel-footer>
+                </aw-scrollpanel>      
+            </aw-flex-column>
+        </aw-flex-row>
+    </div>
+            
+    <aw-add-navigate active-state="data.activeState" action="actions.setActiveView"></aw-add-navigate>
+</aw-command-panel>
